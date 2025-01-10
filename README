@@ -1,3 +1,3 @@
-Test macros for nRF supposed to be used with Nature Remo3.
+Test macros for nRF Connect to use in combination with EST32 BLE server.
 Each xml file contains macros to send write data from Remo3 to bluetooth server.
 Data are 0x00~0x09 with notification from server to confirm they are received.
