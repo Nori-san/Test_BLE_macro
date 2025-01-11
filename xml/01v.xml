@@ -1,1 +1,14 @@
-
+<macro name="01" icon="None">
+   <assert-service description="Ensure abcd service" uuid="aaaa">
+      <assert-characteristic description="Ensure 1234 characteristic" uuid="1234">
+         <assert-cccd description="Ensure CCCD"/>
+         <property name="WRITE" requirement="MANDATORY"/>
+         <property name="NOTIFY" requirement="MANDATORY"/>
+      </assert-characteristic>
+   </assert-service>
+   <write-descriptor description="Enable notifications for 1234" characteristic-uuid="1234" service-uuid="abcd" uuid="2902" value="0100"/>
+   <write description="Write 0x01 to 1234" characteristic-uuid="1234" service-uuid="abcd" value="01" type="WRITE_REQUEST"/>
+   <wait-for-notification description="Wait for notification to 1234" characteristic-uuid="1234" service-uuid="aaaa">
+      <assert-value description="Assert value equals 0x01" value="01"/>
+   </wait-for-notification>
+</macro>
