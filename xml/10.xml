@@ -1,0 +1,14 @@
+<macro name="10">
+   <assert-service description="Ensure 28b0883b-7ec3-4b46-8f64-8559ae036e4e service" uuid="28b0883b-7ec3-4b46-8f64-8559ae036e4e">
+      <assert-characteristic description="Ensure 2049779d-88a9-403a-9c59-c7df79e1dd7c characteristic" uuid="2049779d-88a9-403a-9c59-c7df79e1dd7c">
+         <assert-cccd description="Ensure CCCD"/>
+         <property name="WRITE" requirement="MANDATORY"/>
+         <property name="NOTIFY" requirement="MANDATORY"/>
+      </assert-characteristic>
+   </assert-service>
+   <write-descriptor description="Enable notifications for 2049779d-88a9-403a-9c59-c7df79e1dd7c" characteristic-uuid="2049779d-88a9-403a-9c59-c7df79e1dd7c" service-uuid="28b0883b-7ec3-4b46-8f64-8559ae036e4e" uuid="00002902-0000-1000-8000-00805f9b34fb" value="0100"/>
+   <write description="Write 0x10 to 2049779d-88a9-403a-9c59-c7df79e1dd7c" characteristic-uuid="2049779d-88a9-403a-9c59-c7df79e1dd7c" service-uuid="28b0883b-7ec3-4b46-8f64-8559ae036e4e" value="10" type="WRITE_REQUEST"/>
+   <wait-for-notification description="Wait for notification to 2049779d-88a9-403a-9c59-c7df79e1dd7c" characteristic-uuid="2049779d-88a9-403a-9c59-c7df79e1dd7c" service-uuid="28b0883b-7ec3-4b46-8f64-8559ae036e4e">
+      <assert-value description="Assert value equals 0x10" value="10"/>
+   </wait-for-notification>
+</macro>
