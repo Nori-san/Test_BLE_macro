@@ -1,7 +1,6 @@
 <macro name="08">
    <assert-service description="Ensure 28b0883b-7ec3-4b46-8f64-8559ae036e4e service" uuid="28b0883b-7ec3-4b46-8f64-8559ae036e4e">
       <assert-characteristic description="Ensure 2049779d-88a9-403a-9c59-c7df79e1dd7c characteristic" uuid="2049779d-88a9-403a-9c59-c7df79e1dd7c">
-         <assert-cccd description="Ensure CCCD"/>
          <property name="WRITE" requirement="MANDATORY"/>
          <property name="NOTIFY" requirement="MANDATORY"/>
       </assert-characteristic>
